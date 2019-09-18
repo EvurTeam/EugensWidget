@@ -12,7 +12,7 @@ namespace EugensWidget
 {
     public partial class TicTacToe : Form
     {
-        const char EMPTY_CHAR = '#';
+        const char EMPTY_CHAR = ' ';
         const char PLAYER_CHAR = 'x';
         const char AI_CHAR = 'o';
         const int AI_TURN = 0;
@@ -26,6 +26,7 @@ namespace EugensWidget
         public TicTacToe()
         {
             InitializeComponent();
+            Control.CheckForIllegalCrossThreadCalls = false;
             cellData = new char[9];
             cells = new Label[9];
             int n = 0;
@@ -35,7 +36,7 @@ namespace EugensWidget
                 item.Click += Item_Click;
                 cells[n++] = item;
             }
-            button1.Click += (s, e) => NewGame(true);
+            button1.Click += (s, e) => { NewGame(true); RefreshScore(); }
             NewGame(true);
             RefreshScore();
         }
@@ -134,9 +135,14 @@ namespace EugensWidget
             var indexInList = rnd.Next(emptyCells.Count);
             var realIndex = emptyCells.ElementAt(indexInList);
             cellData[realIndex] = AI_CHAR;
-            cells[realIndex].Text = AI_CHAR.ToString();
-            var result = CheckField();
-            ParseResult(result);
+            // genius...
+            var tcb = new System.Threading.TimerCallback((x) => {
+                cells[realIndex].Text = AI_CHAR.ToString();
+                var result = CheckField();
+                ParseResult(result);
+            });
+            var t = new System.Threading.Timer(tcb, null, new Random().Next(200, 501), System.Threading.Timeout.Infinite);
+            // todo если начать новую игру, то таймер срабатывает. Надо блочить кнопку на ход бота
         }
     }
 
