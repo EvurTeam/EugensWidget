@@ -12,7 +12,7 @@ namespace EugensWidget
         public Color BackColor { get; private set; }
         public Color ForeColor { get; private set; }
 
-        public static readonly StyleTheme DefaultTheme = new StyleTheme(Color.DarkSlateGray, SystemColors.ButtonHighlight);
+        public static readonly StyleTheme DefaultTheme = new StyleTheme(Color.SteelBlue, SystemColors.ButtonHighlight);
         public static readonly StyleTheme LightTheme = new StyleTheme(Color.White, Color.Black);
         public static readonly StyleTheme NightTheme = new StyleTheme(Color.Black, Color.White);
 

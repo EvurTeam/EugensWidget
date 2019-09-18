@@ -47,6 +47,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>E_pko-Rage-Icon_34078.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="AngleSharp, Version=0.13.0.0, Culture=neutral, PublicKeyToken=e83494dcdc6d31ea, processorArchitecture=MSIL">
       <HintPath>packages\AngleSharp.0.13.0\lib\net46\AngleSharp.dll</HintPath>
@@ -158,6 +161,21 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\IjWSsVWMo-Y.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Paint_Windows_8_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Иконка_программы__Ножницы__Windows.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\artage-io-thumb-a16765266f1aa58a336d03bbe583d1da.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="E_pko-Rage-Icon_34078.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

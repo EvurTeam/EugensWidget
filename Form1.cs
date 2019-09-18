@@ -49,10 +49,54 @@ namespace EugensWidget
             button9.Click += (s, e) => SafeProcessStart("calc");
             button10.Click += (s, e) => SafeProcessStart("notepad");
             button5.Click += (s, e) => Screenshot();
+            button11.Click += (s, e) => SafeProcessStart("http://htmlbook.ru/");
+            button12.Click += (s, e) => SafeProcessStart("mspaint");
+            button13.Click += Button13_Click;
+            button14.Click += GoogleIt;
+            textBox2.KeyDown += (s, e) =>
+            {
+                if (e.KeyCode == Keys.Enter) GoogleIt(null, null);
+                e.Handled = true;
+            };
+            textBox2.Text = GetRandomQuest();
             checkBox1.CheckedChanged += (s, e) => TopMost = checkBox1.Checked;
             checkBox1.Checked = true;
             curItem.ShowResult();
             jokeItem.ShowResult();
+        }
+
+        private string GetRandomQuest()
+        {
+            var arr = new[]
+            {
+                "Как поднять ммр",
+                "Контрпик инвокера",
+                "Продать рапипу союзника",
+                "Новая мета",
+                "Гайд на манки кинга",
+                "Аркана на фамильяров",
+                "Фура роумер или друид",
+                "Коги не ломаются что делать",
+                "Сплитпуш на хайграунде уроки",
+                "Буст аккаунта за 3к",
+                "Gogi map скачать бесплатно",
+            };
+            return arr[rnd.Next(arr.Length)];
+        }
+
+        private void GoogleIt(object sender, EventArgs e)
+        {
+            var question = textBox2.Text;
+            if (string.IsNullOrWhiteSpace(question)) return;
+            var url = $"https://www.google.com/search?q={question.Replace(" ","+")}";
+            Process.Start(url);
+        }
+
+        private void Button13_Click(object sender, EventArgs e)
+        {
+            var path64 = $"{Environment.GetFolderPath(Environment.SpecialFolder.Windows)}\\sysnative\\snippingtool.exe";
+            var path32 = $"{Environment.GetFolderPath(Environment.SpecialFolder.System)}\\snippingtool.exe";
+            SafeProcessStartVariant(path32, path64);
         }
 
         private void Screenshot()
@@ -209,6 +253,25 @@ namespace EugensWidget
             }
         }
 
+        void SafeProcessStartVariant(string path, string pathCatch)
+        {
+            try
+            {
+                Process.Start(path);
+            }
+            catch
+            {
+                try
+                {
+                    Process.Start(pathCatch);
+                }
+                catch
+                {
+                    MessageBox.Show($"Пути \"{path}\" не существует или файл скрыт.");
+                }
+            }
+        }
+
         void SafeProcessStart(Process proc)
         {
             try
@@ -219,6 +282,49 @@ namespace EugensWidget
             {
                 MessageBox.Show($"Пути \"{proc.StartInfo.FileName}\" не существует или файл скрыт.");
             }
+        }
+
+        private void XHunterToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var wnd = new XHunter();
+            wnd.Show();
+        }
+
+        private void TheBindingOfIsaacToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SafeProcessStart("https://thelastgame.ru/the-binding-of-isaac-afterbirth-plus/");
+        }
+
+        private void CC2019ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SafeProcessStart("http://torrent-track.net/14424-adobe-photoshop-cc-2019-200013785-pc-repack-by-kpojiuk-multi-ru.html");
+        }
+
+        private void СтараяПодборкаToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SafeProcessStart("http://waspeer.info/sobranie-knig-po-php-na-russkom-t195812.html");
+        }
+
+        private void PHP7ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SafeProcessStart("https://rutracker.org/forum/viewtopic.php?t=5582907");
+        }
+
+        private void CSS3ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SafeProcessStart("https://vk.com/wall-54530371_1177");
+        }
+
+        private void СвернутьВТрейToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Hide();
+            notifyIcon1.Visible = true;
+        }
+
+        private void NotifyIcon1_MouseClick(object sender, MouseEventArgs e)
+        {
+            Show();
+            notifyIcon1.Visible = false;
         }
     }
 }

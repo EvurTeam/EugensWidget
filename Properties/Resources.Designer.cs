@@ -73,6 +73,16 @@ namespace EugensWidget.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap artage_io_thumb_a16765266f1aa58a336d03bbe583d1da {
+            get {
+                object obj = ResourceManager.GetObject("artage-io-thumb-a16765266f1aa58a336d03bbe583d1da", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap calculator {
             get {
                 object obj = ResourceManager.GetObject("calculator", resourceCulture);
@@ -83,9 +93,29 @@ namespace EugensWidget.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap IjWSsVWMo_Y {
+            get {
+                object obj = ResourceManager.GetObject("IjWSsVWMo-Y", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap imagen_yandex_news_widget_0thumb {
             get {
                 object obj = ResourceManager.GetObject("imagen-yandex-news-widget-0thumb", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Paint_Windows_8_icon {
+            get {
+                object obj = ResourceManager.GetObject("Paint_Windows_8_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -146,6 +176,16 @@ namespace EugensWidget.Properties {
         internal static System.Drawing.Bitmap Без_названия {
             get {
                 object obj = ResourceManager.GetObject("Без названия", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Иконка_программы__Ножницы__Windows {
+            get {
+                object obj = ResourceManager.GetObject("Иконка_программы__Ножницы__Windows", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
