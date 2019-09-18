@@ -73,6 +73,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="TicTacToe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TicTacToe.Designer.cs">
+      <DependentUpon>TicTacToe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WeatherItem.cs" />
     <Compile Include="CurrencyItem.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -106,6 +113,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="TicTacToe.resx">
+      <DependentUpon>TicTacToe.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="XHunter.resx">
       <DependentUpon>XHunter.cs</DependentUpon>
     </EmbeddedResource>
@@ -175,6 +185,7 @@
     <None Include="bin\Debug\artage-io-thumb-a16765266f1aa58a336d03bbe583d1da.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="bin\Debug\windows_explorer_icon.jpg" />
     <Content Include="E_pko-Rage-Icon_34078.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

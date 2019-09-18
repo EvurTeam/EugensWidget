@@ -173,6 +173,16 @@ namespace EugensWidget.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap windows_explorer_icon {
+            get {
+                object obj = ResourceManager.GetObject("windows_explorer_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Без_названия {
             get {
                 object obj = ResourceManager.GetObject("Без названия", resourceCulture);

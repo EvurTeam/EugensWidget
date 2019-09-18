@@ -14,36 +14,48 @@ namespace EugensWidget
 {
     public partial class Form1 : Form
     {
+        const int BASE_HEIGHT = 199;
+        const int MAX_HEIGHT = 518;
+
         const int MINUTE = 60 * 1000;
-        const int PARSING_INTERVAL = MINUTE * 5;
+        const int WEATHER_INTERVAL = MINUTE * 20;
+        const int CURRENCY_INTERVAL = MINUTE * 5;
         const int JOKE_INTERVAL = MINUTE * 2;
 
-        List<IParsingResultItem> parsingItems = new List<IParsingResultItem>();
         Random rnd = new Random();
+        JokeItem jokeItem;
 
         public Form1()
         {
             InitializeComponent();
+            Height = BASE_HEIGHT;
             Top = 0;
             Left = (Screen.PrimaryScreen.Bounds.Width / 2) - Width / 2;
             var curItem = new CurrencyItem();
             curItem.SetViewer(label1);
-            var jokeItem = new JokeItem();
+            jokeItem = new JokeItem();
             jokeItem.SetViewer(textBox1);
+            var weatherItem = new WeatherItem();
+            weatherItem.SetViewer(label2);
             var t = new Timer();
-            t.Interval = PARSING_INTERVAL;
+            t.Interval = CURRENCY_INTERVAL;
             t.Tick += (s, e) => curItem.ShowResult();
             t.Start();
             var t2 = new Timer();
             t2.Interval = JOKE_INTERVAL;
             t2.Tick += (s, e) => jokeItem.ShowResult();
             t2.Start();
+            var t3 = new Timer();
+            t3.Interval = WEATHER_INTERVAL;
+            t3.Tick += (s, e) => weatherItem.ShowResult();
+            t3.Start();
             linkLabel1.Click += (s, e) => Close();
+            linkLabel2.Click += (s, e) => СвернутьВТрейToolStripMenuItem_Click(null, null);
             button1.Click += (s, e) => SafeProcessStart("https://youtube.com");
             button2.Click += (s, e) => SafeProcessStart("steam://rungameid/570");
             button3.Click += (s, e) => SafeProcessStart("https://hh.ru");
             button4.Click += (s, e) => SafeProcessStart("https://yandex.ru/news/rubric/index?from=index");
-            button6.Click += (s, e) => jokeItem.ShowResult(); t2.Stop(); t2.Start();
+            textBox1.Click += (s, e) => jokeItem.ShowResult(); t2.Stop(); t2.Start();
             button7.Click += (s, e) => SafeProcessStart("https://www.avito.ru/");
             button8.Click += (s, e) => SafeProcessStart("https://www.vk.com/");
             button9.Click += (s, e) => SafeProcessStart("calc");
@@ -53,6 +65,8 @@ namespace EugensWidget
             button12.Click += (s, e) => SafeProcessStart("mspaint");
             button13.Click += Button13_Click;
             button14.Click += GoogleIt;
+            button6.Click += (s,e) => SafeProcessStart("explorer.exe");
+            button15.Click += (s, e) => new TicTacToe().Show();
             textBox2.KeyDown += (s, e) =>
             {
                 if (e.KeyCode == Keys.Enter) GoogleIt(null, null);
@@ -61,17 +75,19 @@ namespace EugensWidget
             textBox2.Text = GetRandomQuest();
             checkBox1.CheckedChanged += (s, e) => TopMost = checkBox1.Checked;
             checkBox1.Checked = true;
+            checkBox2.CheckedChanged += (s, e) => Opacity = checkBox2.Checked ? 0.4 : 1;
             curItem.ShowResult();
             jokeItem.ShowResult();
+            weatherItem.ShowResult();
         }
 
         private string GetRandomQuest()
-        {
+        {                                           
             var arr = new[]
             {
                 "Как поднять ммр",
                 "Контрпик инвокера",
-                "Продать рапипу союзника",
+                "Продать рапиру союзника",
                 "Новая мета",
                 "Гайд на манки кинга",
                 "Аркана на фамильяров",
@@ -106,7 +122,7 @@ namespace EugensWidget
             var g = Graphics.FromImage(bmp);
             g.CopyFromScreen(0, 0, 0, 0, Screen.PrimaryScreen.Bounds.Size);
             bmp.Save(Environment.GetFolderPath(Environment.SpecialFolder.MyPictures) + $"\\screenshot{DateTime.Now:hh_mm_ss}.jpeg", ImageFormat.Jpeg);
-            Opacity = 1;
+            Opacity = checkBox2.Checked ? 0.4 : 1;
         }
 
         private void Flex()
@@ -325,6 +341,27 @@ namespace EugensWidget
         {
             Show();
             notifyIcon1.Visible = false;
+        }
+
+        private void КопироватьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText(textBox1.Text);
+        }
+
+        private void НовыйАнекдотToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            jokeItem.ShowResult();
+        }
+
+        private void ВклвыклРасширенныйРежимToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Height <= BASE_HEIGHT)
+            {
+                Height = MAX_HEIGHT;
+            } else
+            {
+                Height = BASE_HEIGHT;
+            }
         }
     }
 }

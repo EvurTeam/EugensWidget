@@ -17,7 +17,7 @@ namespace EugensWidget
             var parentBlocks = page.QuerySelectorAll(".currency-table__bordered-row");
             var eur = parentBlocks[0].QuerySelector("div.currency-table__large-text").TextContent;
             var usd = parentBlocks[1].QuerySelector("div.currency-table__large-text").TextContent;
-            _control.Text = $"EUR: {eur}\nUSD: {usd}\n(обновлено в {DateTime.Now:hh:mm})";
+            _control.Text = $"EUR: {eur}   USD: {usd}";
         }
 
         public void SetViewer(Control control)
