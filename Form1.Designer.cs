@@ -547,7 +547,6 @@
             this.button15.BackgroundImage = global::EugensWidget.Properties.Resources.w512h5121347464853Youtubealt2;
             this.button15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button15.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button15.Enabled = false;
             this.button15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button15.Location = new System.Drawing.Point(12, 245);
             this.button15.Name = "button15";

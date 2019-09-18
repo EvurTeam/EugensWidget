@@ -21,11 +21,5 @@ namespace EugensWidget
             res.Close();
             return doc;
         }
-
-        public static Stream GetStream(string url)
-        {
-            var sr = new StreamReader(url);
-            return sr.BaseStream;
-        }
     }
 }

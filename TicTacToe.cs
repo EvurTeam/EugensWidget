@@ -29,19 +29,14 @@ namespace EugensWidget
             cellData = new char[9];
             cells = new Label[9];
             int n = 0;
-            foreach (Control item in Controls)
+            for (int i = 0; i < 9; i++)
             {
-                if (item is Label)
-                {
-                    if (item != label10)
-                    {
-                        item.Click += Item_Click;
-                        cells[n++] = item as Label;
-                    }
-                }
+                var item = (Label)Controls[$"label{i + 1}"];
+                item.Click += Item_Click;
+                cells[n++] = item;
             }
-            button1.Click += (s, e) => NewGame();
-            NewGame();
+            button1.Click += (s, e) => NewGame(true);
+            NewGame(true);
             RefreshScore();
         }
 
@@ -54,15 +49,60 @@ namespace EugensWidget
             {
                 label.Text = PLAYER_CHAR.ToString();
                 cellData[num] = PLAYER_CHAR;
-                // todo
-                BotTurn();
+                var result = CheckField();
+                ParseResult(result);
             }
         }
 
-        void NewGame()
+        private TurnResult CheckField()
         {
-            playerScore = 0;
-            aiScore = 0;
+            var row1 = cellData[0] == cellData[1] && cellData[0] == cellData[2] && cellData[0] != EMPTY_CHAR;
+            var row2 = cellData[3] == cellData[4] && cellData[3] == cellData[5] && cellData[3] != EMPTY_CHAR;
+            var row3 = cellData[6] == cellData[7] && cellData[6] == cellData[8] && cellData[6] != EMPTY_CHAR;
+            var col1 = cellData[0] == cellData[3] && cellData[0] == cellData[6] && cellData[0] != EMPTY_CHAR;
+            var col2 = cellData[1] == cellData[4] && cellData[1] == cellData[7] && cellData[1] != EMPTY_CHAR;
+            var col3 = cellData[2] == cellData[5] && cellData[2] == cellData[8] && cellData[2] != EMPTY_CHAR;
+            var d1 = cellData[0] == cellData[4] && cellData[0] == cellData[8] && cellData[0] != EMPTY_CHAR;
+            var d2 = cellData[2] == cellData[4] && cellData[2] == cellData[6] && cellData[2] != EMPTY_CHAR;
+            if (row1 || row2 || row3 || col1 || col2 || col3 || d1 || d2)
+            {
+                return (currentTurn == AI_TURN) ? TurnResult.AiWin : TurnResult.HumanWin;
+            }
+            return cellData.Contains(EMPTY_CHAR) ? TurnResult.None : TurnResult.NoWay;
+        }
+
+        void ParseResult(TurnResult result)
+        {
+            if (result == TurnResult.AiWin)
+            {
+                aiScore++;
+                RefreshScore();
+                NewGame(false);
+            }
+            else if (result == TurnResult.HumanWin)
+            {
+                playerScore++;
+                RefreshScore();
+                NewGame(false);
+            }
+            else if (result == TurnResult.None)
+            {
+                currentTurn = (currentTurn == 0) ? 1 : 0;
+                if (currentTurn == AI_TURN) BotTurn();
+            }
+            else
+            {
+                NewGame(false);
+            }
+        }
+
+        void NewGame(bool newScore)
+        {
+            if (newScore)
+            {
+                playerScore = 0;
+                aiScore = 0;
+            }
             for (int i = 0; i < 9; i++)
             {
                 cellData[i] = EMPTY_CHAR;
@@ -70,6 +110,7 @@ namespace EugensWidget
             }
             var rnd = new Random();
             currentTurn = rnd.Next(2);
+            if (currentTurn == AI_TURN) BotTurn();
         }
 
         void RefreshScore()
@@ -90,12 +131,20 @@ namespace EugensWidget
                 if (cellData[i] == EMPTY_CHAR) emptyCells.Add(i);
             }
             var rnd = new Random();
-            var index = rnd.Next(emptyCells.Count);
-            var rndCell = emptyCells.ElementAt(index);
-            cellData[rndCell] = AI_CHAR;
-            cells[rndCell].Text = AI_CHAR.ToString();
-            // todo
-            currentTurn = PLAYER_TURN;
+            var indexInList = rnd.Next(emptyCells.Count);
+            var realIndex = emptyCells.ElementAt(indexInList);
+            cellData[realIndex] = AI_CHAR;
+            cells[realIndex].Text = AI_CHAR.ToString();
+            var result = CheckField();
+            ParseResult(result);
         }
+    }
+
+    public enum TurnResult
+    {
+        None,
+        NoWay,
+        AiWin,
+        HumanWin
     }
 }
