@@ -78,6 +78,11 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.вклвыклРасширенныйРежимToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.button15 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button14 = new System.Windows.Forms.Button();
             this.button13 = new System.Windows.Forms.Button();
@@ -92,11 +97,6 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.вклвыклРасширенныйРежимToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.button15 = new System.Windows.Forms.Button();
             this.contextMenuStrip2.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -198,7 +198,7 @@
             this.ночнаяToolStripMenuItem,
             this.дневнаяToolStripMenuItem});
             this.сменитьЦветToolStripMenuItem.Name = "сменитьЦветToolStripMenuItem";
-            this.сменитьЦветToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
+            this.сменитьЦветToolStripMenuItem.Size = new System.Drawing.Size(229, 22);
             this.сменитьЦветToolStripMenuItem.Text = "Сменить тему";
             // 
             // стандартнаяToolStripMenuItem
@@ -230,7 +230,7 @@
             this.фотошопToolStripMenuItem,
             this.книгиToolStripMenuItem});
             this.скачатьТоррентToolStripMenuItem.Name = "скачатьТоррентToolStripMenuItem";
-            this.скачатьТоррентToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
+            this.скачатьТоррентToolStripMenuItem.Size = new System.Drawing.Size(229, 22);
             this.скачатьТоррентToolStripMenuItem.Text = "Скачать торрент";
             // 
             // активаторВиндыИОфисаToolStripMenuItem
@@ -331,7 +331,7 @@
             this.отВирусовИРекламыToolStripMenuItem,
             this.книгиToolStripMenuItem1});
             this.скачатьПростоToolStripMenuItem.Name = "скачатьПростоToolStripMenuItem";
-            this.скачатьПростоToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
+            this.скачатьПростоToolStripMenuItem.Size = new System.Drawing.Size(229, 22);
             this.скачатьПростоToolStripMenuItem.Text = "Скачать просто";
             // 
             // отВирусовИРекламыToolStripMenuItem
@@ -383,7 +383,7 @@
             // чекунутьВакансииToolStripMenuItem
             // 
             this.чекунутьВакансииToolStripMenuItem.Name = "чекунутьВакансииToolStripMenuItem";
-            this.чекунутьВакансииToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
+            this.чекунутьВакансииToolStripMenuItem.Size = new System.Drawing.Size(229, 22);
             this.чекунутьВакансииToolStripMenuItem.Text = "Чекунуть вакансии";
             this.чекунутьВакансииToolStripMenuItem.Click += new System.EventHandler(this.ЧекунутьВакансииToolStripMenuItem_Click);
             // 
@@ -394,7 +394,7 @@
             this.действияToolStripMenuItem,
             this.xHunterToolStripMenuItem});
             this.труХацкерToolStripMenuItem.Name = "труХацкерToolStripMenuItem";
-            this.труХацкерToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
+            this.труХацкерToolStripMenuItem.Size = new System.Drawing.Size(229, 22);
             this.труХацкерToolStripMenuItem.Text = "Тру хацкер";
             // 
             // тулзыToolStripMenuItem
@@ -463,19 +463,19 @@
             // 
             this.флексToolStripMenuItem.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.флексToolStripMenuItem.Name = "флексToolStripMenuItem";
-            this.флексToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
+            this.флексToolStripMenuItem.Size = new System.Drawing.Size(229, 22);
             this.флексToolStripMenuItem.Text = "Флекс";
             this.флексToolStripMenuItem.Click += new System.EventHandler(this.ФлексToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(170, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(226, 6);
             // 
             // свернутьВТрейToolStripMenuItem
             // 
             this.свернутьВТрейToolStripMenuItem.Name = "свернутьВТрейToolStripMenuItem";
-            this.свернутьВТрейToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
+            this.свернутьВТрейToolStripMenuItem.Size = new System.Drawing.Size(229, 22);
             this.свернутьВТрейToolStripMenuItem.Text = "Свернуть в трей";
             this.свернутьВТрейToolStripMenuItem.Click += new System.EventHandler(this.СвернутьВТрейToolStripMenuItem_Click);
             // 
@@ -508,6 +508,53 @@
             this.checkBox2.TabIndex = 20;
             this.checkBox2.Text = "Полупрозрачность";
             this.checkBox2.UseVisualStyleBackColor = true;
+            // 
+            // linkLabel2
+            // 
+            this.linkLabel2.ActiveLinkColor = System.Drawing.Color.Yellow;
+            this.linkLabel2.AutoSize = true;
+            this.linkLabel2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.linkLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.linkLabel2.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.linkLabel2.LinkColor = System.Drawing.Color.Red;
+            this.linkLabel2.Location = new System.Drawing.Point(806, 36);
+            this.linkLabel2.Name = "linkLabel2";
+            this.linkLabel2.Size = new System.Drawing.Size(22, 29);
+            this.linkLabel2.TabIndex = 23;
+            this.linkLabel2.TabStop = true;
+            this.linkLabel2.Text = "-";
+            // 
+            // label2
+            // 
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label2.Location = new System.Drawing.Point(12, 40);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(241, 55);
+            this.label2.TabIndex = 24;
+            this.label2.Text = "str *****\r\nstr *****";
+            // 
+            // вклвыклРасширенныйРежимToolStripMenuItem
+            // 
+            this.вклвыклРасширенныйРежимToolStripMenuItem.Name = "вклвыклРасширенныйРежимToolStripMenuItem";
+            this.вклвыклРасширенныйРежимToolStripMenuItem.Size = new System.Drawing.Size(229, 22);
+            this.вклвыклРасширенныйРежимToolStripMenuItem.Text = "Вкл\\выкл расширенный режим";
+            this.вклвыклРасширенныйРежимToolStripMenuItem.Click += new System.EventHandler(this.ВклвыклРасширенныйРежимToolStripMenuItem_Click);
+            // 
+            // button15
+            // 
+            this.button15.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.button15.BackgroundImage = global::EugensWidget.Properties.Resources.w512h5121347464853Youtubealt2;
+            this.button15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button15.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button15.Enabled = false;
+            this.button15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button15.Location = new System.Drawing.Point(12, 245);
+            this.button15.Name = "button15";
+            this.button15.Size = new System.Drawing.Size(50, 50);
+            this.button15.TabIndex = 25;
+            this.toolTip1.SetToolTip(this.button15, "youtube.com");
+            this.button15.UseVisualStyleBackColor = false;
             // 
             // button6
             // 
@@ -699,52 +746,6 @@
             this.button1.TabIndex = 1;
             this.toolTip1.SetToolTip(this.button1, "youtube.com");
             this.button1.UseVisualStyleBackColor = false;
-            // 
-            // linkLabel2
-            // 
-            this.linkLabel2.ActiveLinkColor = System.Drawing.Color.Yellow;
-            this.linkLabel2.AutoSize = true;
-            this.linkLabel2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.linkLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.linkLabel2.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.linkLabel2.LinkColor = System.Drawing.Color.Red;
-            this.linkLabel2.Location = new System.Drawing.Point(806, 36);
-            this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Size = new System.Drawing.Size(22, 29);
-            this.linkLabel2.TabIndex = 23;
-            this.linkLabel2.TabStop = true;
-            this.linkLabel2.Text = "-";
-            // 
-            // label2
-            // 
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.Location = new System.Drawing.Point(12, 40);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(241, 55);
-            this.label2.TabIndex = 24;
-            this.label2.Text = "str *****\r\nstr *****";
-            // 
-            // вклвыклРасширенныйРежимToolStripMenuItem
-            // 
-            this.вклвыклРасширенныйРежимToolStripMenuItem.Name = "вклвыклРасширенныйРежимToolStripMenuItem";
-            this.вклвыклРасширенныйРежимToolStripMenuItem.Size = new System.Drawing.Size(229, 22);
-            this.вклвыклРасширенныйРежимToolStripMenuItem.Text = "Вкл\\выкл расширенный режим";
-            this.вклвыклРасширенныйРежимToolStripMenuItem.Click += new System.EventHandler(this.ВклвыклРасширенныйРежимToolStripMenuItem_Click);
-            // 
-            // button15
-            // 
-            this.button15.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.button15.BackgroundImage = global::EugensWidget.Properties.Resources.w512h5121347464853Youtubealt2;
-            this.button15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button15.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button15.Location = new System.Drawing.Point(12, 245);
-            this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(50, 50);
-            this.button15.TabIndex = 25;
-            this.toolTip1.SetToolTip(this.button15, "youtube.com");
-            this.button15.UseVisualStyleBackColor = false;
             // 
             // Form1
             // 

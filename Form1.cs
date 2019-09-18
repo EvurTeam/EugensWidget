@@ -79,6 +79,7 @@ namespace EugensWidget
             curItem.ShowResult();
             jokeItem.ShowResult();
             weatherItem.ShowResult();
+
         }
 
         private string GetRandomQuest()

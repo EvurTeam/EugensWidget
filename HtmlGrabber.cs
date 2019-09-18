@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
@@ -19,6 +20,12 @@ namespace EugensWidget
             var doc = parser.ParseDocument(res.GetResponseStream());
             res.Close();
             return doc;
+        }
+
+        public static Stream GetStream(string url)
+        {
+            var sr = new StreamReader(url);
+            return sr.BaseStream;
         }
     }
 }
