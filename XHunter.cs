@@ -29,6 +29,23 @@ namespace EugensWidget
             button8.Click += Button8_Click;
             button9.Click += Button9_Click;
             button10.Click += Button10_Click;
+            button11.Click += Button11_Click;
+        }
+
+        private void Button11_Click(object sender, EventArgs e)
+        {
+            listView1.Items.Clear();
+            foreach (var proc in Process.GetProcesses())
+            {
+                listView1.Items.Add(
+                    new ListViewItem(new[]
+                    {
+                        $"{proc.Id}",
+                        $"{proc.ProcessName}",
+                        $"{proc.MainWindowHandle}"
+                    })
+                );
+            }
         }
 
         private void Button10_Click(object sender, EventArgs e)
@@ -131,6 +148,24 @@ namespace EugensWidget
                 FailMsg();
             else
                 CompleteMsg(result); 
+        }
+
+        private void УбитьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var selectedItems = listView1.SelectedItems;
+            if (selectedItems.Count > 0)
+            {
+                foreach (ListViewItem item in selectedItems)
+                {
+                    var id = int.Parse(item.SubItems[0].Text);
+                    var proc = Process.GetProcessById(id);
+                    if (proc != null)
+                    {
+                        proc.Kill();
+                        listView1.Items.Remove(item);
+                    }
+                }
+            }
         }
     }
 }

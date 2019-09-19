@@ -75,13 +75,15 @@
             this.флексToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.свернутьВТрейToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.вклвыклРасширенныйРежимToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.label2 = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.вклвыклРасширенныйРежимToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.button16 = new System.Windows.Forms.Button();
+            this.button17 = new System.Windows.Forms.Button();
             this.button15 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button14 = new System.Windows.Forms.Button();
@@ -97,6 +99,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             this.contextMenuStrip2.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -479,6 +482,13 @@
             this.свернутьВТрейToolStripMenuItem.Text = "Свернуть в трей";
             this.свернутьВТрейToolStripMenuItem.Click += new System.EventHandler(this.СвернутьВТрейToolStripMenuItem_Click);
             // 
+            // вклвыклРасширенныйРежимToolStripMenuItem
+            // 
+            this.вклвыклРасширенныйРежимToolStripMenuItem.Name = "вклвыклРасширенныйРежимToolStripMenuItem";
+            this.вклвыклРасширенныйРежимToolStripMenuItem.Size = new System.Drawing.Size(229, 22);
+            this.вклвыклРасширенныйРежимToolStripMenuItem.Text = "Вкл\\выкл расширенный режим";
+            this.вклвыклРасширенныйРежимToolStripMenuItem.Click += new System.EventHandler(this.ВклвыклРасширенныйРежимToolStripMenuItem_Click);
+            // 
             // textBox2
             // 
             this.textBox2.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -534,21 +544,39 @@
             this.label2.TabIndex = 24;
             this.label2.Text = "str *****\r\nstr *****";
             // 
-            // вклвыклРасширенныйРежимToolStripMenuItem
+            // button16
             // 
-            this.вклвыклРасширенныйРежимToolStripMenuItem.Name = "вклвыклРасширенныйРежимToolStripMenuItem";
-            this.вклвыклРасширенныйРежимToolStripMenuItem.Size = new System.Drawing.Size(229, 22);
-            this.вклвыклРасширенныйРежимToolStripMenuItem.Text = "Вкл\\выкл расширенный режим";
-            this.вклвыклРасширенныйРежимToolStripMenuItem.Click += new System.EventHandler(this.ВклвыклРасширенныйРежимToolStripMenuItem_Click);
+            this.button16.BackColor = System.Drawing.Color.Silver;
+            this.button16.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button16.Location = new System.Drawing.Point(12, 479);
+            this.button16.Name = "button16";
+            this.button16.Size = new System.Drawing.Size(169, 27);
+            this.button16.TabIndex = 26;
+            this.button16.Text = "Отладочная инфа";
+            this.button16.UseVisualStyleBackColor = false;
+            // 
+            // button17
+            // 
+            this.button17.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.button17.BackgroundImage = global::EugensWidget.Properties.Resources.Без_названия__2_;
+            this.button17.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button17.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button17.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button17.Location = new System.Drawing.Point(12, 423);
+            this.button17.Name = "button17";
+            this.button17.Size = new System.Drawing.Size(50, 50);
+            this.button17.TabIndex = 27;
+            this.toolTip1.SetToolTip(this.button17, "Посетить Github репозиторий проекта");
+            this.button17.UseVisualStyleBackColor = false;
             // 
             // button15
             // 
             this.button15.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.button15.BackgroundImage = global::EugensWidget.Properties.Resources.w512h5121347464853Youtubealt2;
+            this.button15.BackgroundImage = global::EugensWidget.Properties.Resources.Без_названия__1_;
             this.button15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button15.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button15.Location = new System.Drawing.Point(12, 245);
+            this.button15.Location = new System.Drawing.Point(708, 144);
             this.button15.Name = "button15";
             this.button15.Size = new System.Drawing.Size(50, 50);
             this.button15.TabIndex = 25;
@@ -746,6 +774,18 @@
             this.toolTip1.SetToolTip(this.button1, "youtube.com");
             this.button1.UseVisualStyleBackColor = false;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(329, 469);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(205, 42);
+            this.label3.TabIndex = 28;
+            this.label3.Text = "EvurTeam 2019\r\nНичьи права не защищены";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -754,6 +794,9 @@
             this.ClientSize = new System.Drawing.Size(835, 518);
             this.ContextMenuStrip = this.contextMenuStrip1;
             this.ControlBox = false;
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.button17);
+            this.Controls.Add(this.button16);
             this.Controls.Add(this.button15);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.linkLabel2);
@@ -861,6 +904,9 @@
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.ToolStripMenuItem вклвыклРасширенныйРежимToolStripMenuItem;
         private System.Windows.Forms.Button button15;
+        private System.Windows.Forms.Button button16;
+        private System.Windows.Forms.Button button17;
+        private System.Windows.Forms.Label label3;
     }
 }
 

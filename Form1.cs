@@ -67,6 +67,8 @@ namespace EugensWidget
             button14.Click += GoogleIt;
             button6.Click += (s,e) => SafeProcessStart("explorer.exe");
             button15.Click += (s, e) => new TicTacToe().Show();
+            button16.Click += Button16_Click;
+            button17.Click += (s,e) => SafeProcessStart("https://github.com/EvurTeam/EugensWidget");
             textBox2.KeyDown += (s, e) =>
             {
                 if (e.KeyCode == Keys.Enter) GoogleIt(null, null);
@@ -79,7 +81,35 @@ namespace EugensWidget
             curItem.ShowResult();
             jokeItem.ShowResult();
             weatherItem.ShowResult();
+        }
 
+        private void Button16_Click(object sender, EventArgs e)
+        {
+            var f = new Form()
+            {
+                TopMost = checkBox1.Checked,
+                Width = 800
+            };
+            var tb = new TextBox()
+            {
+                Multiline = true,
+                Font = new Font("Consolas", 12f),
+                Dock = DockStyle.Fill,
+                TabStop = false,
+                ReadOnly = true,
+                BackColor = SystemColors.Control
+            };
+            var sb = new StringBuilder();
+            sb.AppendLine($"Путь до исполняемого файла: {Application.ExecutablePath}");
+            sb.AppendLine($"ID текущего процесса: {Process.GetCurrentProcess().Id}");
+            sb.AppendLine($"Дескриптор текущего процесса: {Process.GetCurrentProcess().Handle}");
+            sb.AppendLine($"Дескриптор окна: {Handle}");
+            sb.AppendLine($"Разрядность программы: x{(Environment.Is64BitProcess ? 64 : 32)}");
+            sb.AppendLine($"Аргументы командной строки: {Environment.CommandLine}");
+            sb.AppendLine($"Адрес модуля в памяти: {Process.GetCurrentProcess().MainModule.BaseAddress}");
+            tb.Text = sb.ToString();
+            f.Controls.Add(tb);
+            f.ShowDialog();
         }
 
         private string GetRandomQuest()

@@ -193,6 +193,26 @@ namespace EugensWidget.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Без_названия__1_ {
+            get {
+                object obj = ResourceManager.GetObject("Без названия (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Без_названия__2_ {
+            get {
+                object obj = ResourceManager.GetObject("Без названия (2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Иконка_программы__Ножницы__Windows {
             get {
                 object obj = ResourceManager.GetObject("Иконка_программы__Ножницы__Windows", resourceCulture);

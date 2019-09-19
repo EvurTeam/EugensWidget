@@ -36,7 +36,7 @@ namespace EugensWidget
                 item.Click += Item_Click;
                 cells[n++] = item;
             }
-            button1.Click += (s, e) => { NewGame(true); RefreshScore(); }
+            button1.Click += (s, e) => { NewGame(true); RefreshScore(); };
             NewGame(true);
             RefreshScore();
         }
@@ -126,6 +126,7 @@ namespace EugensWidget
 
         void BotTurn()
         {
+            button1.Enabled = false;
             var emptyCells = new List<int>();
             for (int i = 0; i < 9; i++)
             {
@@ -140,9 +141,9 @@ namespace EugensWidget
                 cells[realIndex].Text = AI_CHAR.ToString();
                 var result = CheckField();
                 ParseResult(result);
+                button1.Enabled = true;
             });
             var t = new System.Threading.Timer(tcb, null, new Random().Next(200, 501), System.Threading.Timeout.Infinite);
-            // todo если начать новую игру, то таймер срабатывает. Надо блочить кнопку на ход бота
         }
     }
 

@@ -186,6 +186,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="bin\Debug\windows_explorer_icon.jpg" />
+    <None Include="bin\Debug\Без названия %281%29.png" />
+    <None Include="bin\Debug\Без названия %282%29.png" />
     <Content Include="E_pko-Rage-Icon_34078.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
